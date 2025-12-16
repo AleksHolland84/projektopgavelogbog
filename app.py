@@ -151,7 +151,8 @@ init_state(konkrete_key, data.get("konkrete_opgaver", ""))
 
 tekst = st.text_area(
     "Beskriv kort, hvad du konkret har lavet i dag",
-    key=konkrete_key
+    key=konkrete_key,
+    height="content"
 )
 
 data["konkrete_opgaver"] = tekst
@@ -198,7 +199,7 @@ init_state(fungerede_key, data.get("fungerede", ""))
 fungerede = st.text_area(
     "Hvad fungerede godt i dag – og hvorfor?",
     key=fungerede_key,
-    height=100
+    height="content"
 )
 data["fungerede"] = fungerede
 
@@ -207,7 +208,7 @@ init_state(svært_key, data.get("svært", ""))
 svært = st.text_area(
     "Hvad var svært, og hvordan håndterede du det?",
     key=svært_key,
-    height=100
+    height="content"
 )
 data["svært"] = svært
 
@@ -216,7 +217,7 @@ init_state(anderledes_key, data.get("anderledes", ""))
 anderledes = st.text_area(
     "Hvad ville du gøre anderledes næste gang?",
     key=anderledes_key,
-    height=100
+    height="content"
 )
 data["anderledes"] = anderledes
 
@@ -228,7 +229,7 @@ init_state(plan_key, data.get("plan", ""))
 plan = st.text_area(
     "Hvad er dit næste skridt?",
     key=plan_key,
-    height=80
+    height="content"
 )
 data["plan"] = plan
 
