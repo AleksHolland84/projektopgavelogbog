@@ -65,7 +65,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("📘 Projektopgave – Logbog")
+st.title("Projektopgave – Logbog")
 st.caption(f"version {version}")
 
 
@@ -84,6 +84,34 @@ if "logbog" not in st.session_state:
         "Fredag": {}
     }
 
+
+# --------------------------------------------------
+# Dilog box
+# --------------------------------------------------
+intro_key = f"itro_vist"
+
+if intro_key not in st.session_state:
+    st.session_state[intro_key] = False
+
+
+@st.dialog("Lærertips")
+def tips():
+    st.subheader("Husk:")
+    st.markdown("""Logbogen bedømmes ikke på sprog, men på refleksion.
+    
+Korte, ærlige svar er bedre end “flotte”.""")
+    st.markdown("""
+Skriv ikke bare hvad du lavede – forklar også hvorfor.
+Det er okay at skrive om fejl og problemer.
+             """)
+
+    if st.button("Ok"):
+        st.session_state[intro_key] = True
+        st.rerun()
+
+if not st.session_state[intro_key]:
+    tips()
+    
 
 # --------------------------------------------------
 # Trin 1: Elevoplysninger
