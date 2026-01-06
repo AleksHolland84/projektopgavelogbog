@@ -109,11 +109,11 @@ Det er okay at skrive om fejl og problemer.
         st.session_state[intro_key] = True
         st.rerun()
 
-'''
+
 # Run dialog box
-if not st.session_state[intro_key]:
-    tips()
-''' 
+#if not st.session_state[intro_key]:
+#    tips()
+
 
 # --------------------------------------------------
 # Trin 1: Elevoplysninger
