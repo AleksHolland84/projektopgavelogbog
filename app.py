@@ -265,13 +265,11 @@ data["plan"] = plan
 
 st.divider()
 
-if st.button("📄 Download logbog som Word"):
+if st.button("📄 Download Word skabelon og arbejdt offline i stedet?"):
     word_file = generer_word()
 
-    st.download_button(
-        label="⬇️ Download Word-dokument",
-        data=word_file,
-        file_name="projektopgave_logbog.docx",
-        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    st.link_button(
+        "⬇️ Download Word dokument",
+        "https://github.com/AleksHolland84/Projektopgave2023/raw/refs/heads/main/ressourcer/Projekt-logbog.docx"
     )
 
